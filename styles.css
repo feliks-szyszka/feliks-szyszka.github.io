@@ -122,7 +122,7 @@ section {
   height: 100%;
   object-fit: cover; /* Ensure the video covers the entire section */
   z-index: -1; /* Ensure the video is behind the content */
-  opacity: 0.7; /* Adjust transparency */
+  opacity: 1; /* Adjust transparency */
 }
 
 .intro-text {
