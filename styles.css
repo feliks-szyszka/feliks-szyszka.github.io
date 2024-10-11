@@ -123,6 +123,7 @@ section {
   object-fit: cover; /* Ensure the video covers the entire section */
   z-index: -1; /* Ensure the video is behind the content */
   opacity: 1; /* Adjust transparency */
+  filter: brightness(0.5); /* Adjust the brightness (0 = black, 1 = original, >1 = brighter) */
 }
 
 .intro-text {
