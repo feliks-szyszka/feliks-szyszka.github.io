@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Feliks Szyszka's Portfolio</title>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section with YouTube Video Background -->
+    <section class="hero">
+        <div class="video-background">
+            <iframe id="youtube-video" 
+                src="https://www.youtube.com/embed/kcfs1-ryKWE?autoplay=1&mute=1&controls=0&showinfo=0&loop=1&playlist=kcfs1-ryKWE&modestbranding=1&rel=0"
+                frameborder="0" 
+                allow="autoplay; encrypted-media" 
+                allowfullscreen>
+            </iframe>
+</div>
+        <div class="intro-text">
+            <h1>Hello! I'm Feliks.</h1>
+            <p>I'm a <span id="age"></span> year old student passionate about technology, design, and engineering.</p>
+            <p>Here, you'll find my projects, skills, and journey as I work towards reaching my aspirations.</p>
+            <p>Take a look and feel free to reach out!</p>
+        </div>
+    </section>
+
+    <section class="about">
+        <h2>About Me</h2>
+        <p>As a student with a strong interest in Engineering + Computer Science, I love exploring various fields from software development to embedded systems.
+            I'm constantly learning new skills and applying them to hands-on projects, with a focus on creating innovative and functional solutions.</p>
+        <p>Check out my <a href="portfolio.html">Portfolio</a> to see my work, including projects in programming, industrial design, and engineering.</p>
+    </section>
+
+    <section class="skills">
+        <h2>Skills & Tools</h2>
+        <div class="skills-content">
+            <ul>
+                <li>Web Development (HTML, CSS, JavaScript)</li>
+                <li>Embedded Systems (CircuitPython, MicroPython)</li>
+                <li>Python (Desktop Applications)</li>
+                <li>MIT App Inventor (Mobile Applications)</li>
+                <li>Linux Terminal & Scripting</li>
+                <li>3D Modeling & Animation (Blender)</li>
+                <li>Graphic Design (Affinity/Adobe Suite)</li>
+                <li>Video Editing (Wondershare Filmora)</li>
+                <li>3D CAD (Ansys, OnShape, FreeCAD, Fusion 360)</li>
+                <li>3D Printing (Slicing Software)</li>
+                <li>My PC (i5-3570K, 8GB RAM, GTX 750Ti, 500GB SSD)</li>
+            </ul>
+            <div class="skills-image">
+                <img src="images/programming.jpg" alt="Programming">
+                <p class="caption">Part of the CSS of this website.</p>
+            </div>
+        </div>
+    </section>  
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Feliks Szyszka. All Rights Reserved.</p>
+        <p>Website made in pure HTML and CSS.</p>
+        <p><a href="contact.html">Get in Touch</a></p>
+    </footer>
+
+    <!-- JavaScript for Dynamic Age Calculation -->
+    <script>
+        const currentYear = new Date().getFullYear();
+        const age = currentYear - 2010;
+        document.getElementById('age').textContent = age;
+    </script>
+</body>
+</html>

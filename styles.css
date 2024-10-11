@@ -1,0 +1,325 @@
+/* Import Local Font */
+@font-face {
+  font-family: 'Space Grotesk';
+  src: url('fonts/SpaceGrotesk-Medium.ttf') format('truetype');
+  font-weight: 500; /* Medium weight */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Space Grotesk';
+  src: url('fonts/SpaceGrotesk-Regular.ttf') format('truetype');
+  font-weight: 400; /* Regular weight */
+  font-style: normal;
+}
+
+/* Apply Light Theme */
+body {
+  font-family: 'Space Grotesk', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333333;
+  transition: background-color 0.3s ease; /* Smooth background color transition */
+  opacity: 1; /* Ensure the body is fully opaque */
+  transition: opacity 0.25s ease; /* Quick opacity transition for fade-out */
+  max-height: 100vh; /* Adjust the height as needed */
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+/* Fade Out Effect */
+.fade-out {
+  opacity: 0; /* Fade out to transparent */
+}
+
+/* Navbar Styling */
+.navbar {
+  display: flex;
+  justify-content: flex-start; /* Align items to the start (left) */
+  align-items: center;
+  width: auto; /* Allow it to adjust based on content */
+  background: rgba(255, 255, 255, 0.7); /* More opaque for better visibility */
+  backdrop-filter: blur(10px);
+  padding: 10px 0px; /* Add horizontal padding */
+  border-radius: 50px; /* Keep rounded edges for pill shape */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Floating effect */
+  position: fixed; /* Make it fixed to the viewport */
+  top: 20px; /* Slightly below the top edge */
+  left: 50%; /* Center it horizontally */
+  transform: translateX(-50%); /* Offset to center the navbar */
+  z-index: 1000; /* Ensures the navbar is above other content */
+  overflow-y: auto;
+}
+
+/* Navbar List */
+.navbar ul {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar ul li {
+  margin: 0 10px;
+}
+
+/* Button Effect without Gradients */
+.navbar ul li a {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  text-decoration: none;
+  color: #111111;
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: 400;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 2px 2px 5px #b0b0b0, -2px -2px 5px #ffffff;
+  transition: all 0.3s ease; /* Maintain transition for buttons */
+}
+
+.navbar ul li a .icon {
+  margin-right: 8px;
+  font-size: 18px;
+}
+
+/* Hover State */
+.navbar ul li a:hover {
+  background-color: #f1f1f1;
+  box-shadow: 2px 2px 8px #aaaaaa, -2px -2px 8px #ffffff;
+}
+
+/* Active Button */
+.navbar ul li a.active {
+  background-color: #f0f0f0;
+  color: #111111;
+  box-shadow: inset 2px 2px 5px #b0b0b0, inset -2px -2px 5px #ffffff;
+}
+
+/* Main content container */
+section {
+  padding: 50px 10%; /* Consistent padding for all sections */
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+#hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the video covers the entire section */
+  z-index: -1; /* Ensure the video is behind the content */
+  opacity: 0.7; /* Adjust transparency */
+}
+
+.intro-text {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 48px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.hero p {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+/* Full-Screen Video Background */
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; /* Keep the video behind the content */
+}
+
+#youtube-video {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%; /* 100vw for the full width based on 16:9 aspect ratio */
+    height: 100vh;
+    pointer-events: none; /* Disable interaction with the video */
+    object-fit: cover; /* Ensures the video covers the section */
+}
+
+/* About Section */
+.about {
+  background-color: #f9f9f9;
+  padding: 60px 10%;
+  text-align: left;
+}
+
+.about h2 {
+  font-size: 28px;
+  font-weight: 500;
+  color: #333333;
+}
+
+.about p {
+  font-size: 18px;
+  color: #666666;
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
+/* Skills Section */
+.skills {
+  background-color: #ffffff;
+  padding: 60px 10%;
+}
+
+.skills h2 {
+  font-size: 28px;
+  font-weight: 500;
+  color: #333333;
+}
+
+.skills-content {
+  display: flex;
+  align-items: stretch; /* Make list and image the same height */
+  justify-content: space-between;
+  flex-wrap: wrap; /* Allows content to wrap on smaller screens */
+}
+
+.skills ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+}
+
+.skills ul li {
+  font-size: 18px;
+  color: #666666;
+  margin: 10px 0;
+  padding-left: 20px;
+  position: relative;
+}
+
+.skills ul li::before {
+  content: '•';
+  color: #666666;
+  position: absolute;
+  left: 0;
+  font-size: 20px;
+}
+
+/* Image and Caption Styling */
+.skills-image {
+  flex: 1;
+  margin-left: 30px; /* Space between the image and the list */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: -90px; /* Move the image up slightly */
+}
+
+.skills-image img {
+  max-width: 100%;
+  max-height: 80%; /* Ensure image doesn't exceed container height */
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  object-fit: cover; /* Maintain aspect ratio and fit within the container */
+}
+
+.skills-image .caption {
+  font-size: 14px;
+  color: #555555;
+  text-align: center;
+  margin-top: 8px;
+}
+
+/* Mobile View (Screens less than 768px) */
+@media (max-width: 768px) {
+  .skills-content {
+    flex-direction: column; /* Stacks the list and image vertically */
+  }
+
+  .skills-image {
+    margin-left: 0;
+    margin-top: 20px; /* Adds space above the image in mobile view */
+  }
+}
+
+
+/* Mobile View (Screens less than 768px) */
+@media (max-width: 768px) {
+  .skills-content {
+    flex-direction: column; /* Stacks the list and image vertically */
+  }
+
+  .skills-image {
+    margin-left: 0;
+    margin-top: 20px; /* Adds space above the image in mobile view */
+  }
+}
+
+/* Mobile View (Screens less than 768px) */
+@media (max-width: 768px) {
+  .skills-content {
+    flex-direction: column; /* Stacks the list and image vertically */
+  }
+
+  .skills-image {
+    margin-left: 0;
+    margin-top: 20px; /* Adds space above the image in mobile view */
+  }
+}
+
+/* Footer */
+footer {
+  background-color: #333333;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px 10%;
+}
+
+footer p {
+  margin: 5px 0;
+}
+
+footer a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* Smooth page transitions */
+html {
+  overflow: visible; /* Allow scrolling */
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+body {
+  animation: fadeIn 0.25s ease-in; /* Quick fade-in animation for body */
+}
