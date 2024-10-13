@@ -1,4 +1,4 @@
-# My Portfolio's Website
+# My Portfolio
 
 A modern portfolio designed using pure HTML, CSS, and JavaScript. The design features a clean, minimalistic aesthetic with a focus on the popular "neumorphism" style—soft shadows and subtle depth bring each element to life, giving a smooth and tactile user experience.
 
