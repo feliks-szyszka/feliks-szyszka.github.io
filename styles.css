@@ -196,18 +196,21 @@ section {
   color: #333333;
 }
 
+/* Flex container for equal split */
 .skills-content {
   display: flex;
-  align-items: stretch; /* Make list and image the same height */
   justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap; /* Allows content to wrap on smaller screens */
+  gap: 20px; /* Optional spacing between columns */
 }
 
+/* Text content takes 50% */
 .skills ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  flex: 1;
+  width: 50%; /* Occupy half of the section */
 }
 
 .skills ul li {
@@ -226,20 +229,16 @@ section {
   font-size: 20px;
 }
 
-/* Image and Caption Styling */
+/* Image content takes 50% */
 .skills-image {
-  flex: 1;
-  width: 50%; /* Make the image fill half of the section */
-  margin-left: 30px; /* Space between the image and the list */
+  width: 50%; /* Image container takes half of the section */
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: -90px; /* Move the image up slightly */
 }
 
 .skills-image img {
-  width: 100%; /* Make the image fill the entire container */
-  max-height: 80%; /* Ensure image doesn't exceed container height */
+  width: 100%; /* Image fills its container */
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
   object-fit: cover; /* Maintain aspect ratio and fit within the container */
@@ -255,51 +254,13 @@ section {
 /* Mobile View (Screens less than 768px) */
 @media (max-width: 768px) {
   .skills-content {
-    flex-direction: column; /* Stacks the list and image vertically */
+    flex-direction: column; /* Stack text and image vertically */
   }
 
+  .skills ul,
   .skills-image {
-    width: 100%; /* Image takes full width on mobile */
+    width: 100%; /* Full width on mobile */
     margin-left: 0;
-    margin-top: 20px; /* Adds space above the image in mobile view */
-  }
-}
-
-
-/* Mobile View (Screens less than 768px) */
-@media (max-width: 768px) {
-  .skills-content {
-    flex-direction: column; /* Stacks the list and image vertically */
-  }
-
-  .skills-image {
-    margin-left: 0;
-    margin-top: 20px; /* Adds space above the image in mobile view */
-  }
-}
-
-
-/* Mobile View (Screens less than 768px) */
-@media (max-width: 768px) {
-  .skills-content {
-    flex-direction: column; /* Stacks the list and image vertically */
-  }
-
-  .skills-image {
-    margin-left: 0;
-    margin-top: 20px; /* Adds space above the image in mobile view */
-  }
-}
-
-/* Mobile View (Screens less than 768px) */
-@media (max-width: 768px) {
-  .skills-content {
-    flex-direction: column; /* Stacks the list and image vertically */
-  }
-
-  .skills-image {
-    margin-left: 0;
-    margin-top: 20px; /* Adds space above the image in mobile view */
   }
 }
 
