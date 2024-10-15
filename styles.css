@@ -248,11 +248,9 @@ section {
 
 /* Style the image inside the centered container */
 .centered img {
-  max-width: 80%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
-  object-fit: stretch; /* Maintain aspect ratio */
+  max-width: 100%;
+  height: 100%;
+  object-fit: fill; /* Maintain aspect ratio */
 }
 
 /* Mobile View (Screens less than 768px) */
