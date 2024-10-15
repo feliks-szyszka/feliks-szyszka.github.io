@@ -198,6 +198,7 @@ section {
 
 .skills-content {
   display: flex;
+  align-items: stretch; /* Make list and image the same height */
   justify-content: space-between;
   flex-wrap: wrap; /* Allows content to wrap on smaller screens */
 }
