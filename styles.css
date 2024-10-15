@@ -196,22 +196,17 @@ section {
   color: #333333;
 }
 
-/* Flex container for split-screen */
 .skills-content {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  flex-direction: row; /* Horizontal layout for desktop */
-  height: 100%; /* Ensure full height of the section is used */
-  gap: 20px; /* Optional: Adds spacing between text and image */
+  flex-wrap: wrap; /* Allows content to wrap on smaller screens */
 }
 
-/* Text content takes 50% */
 .skills ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  width: 50%; /* Half of the section */
+  flex: 1;
 }
 
 .skills ul li {
@@ -230,21 +225,22 @@ section {
   font-size: 20px;
 }
 
-/* Image content takes 50% */
+/* Image and Caption Styling */
 .skills-image {
-  width: 50%; /* Half of the section */
-  height: 100%; /* Ensure it stretches vertically */
+  flex: 1;
+  margin-left: 0px; /* Space between the image and the list */
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-top: -90px; /* Move the image up slightly */
 }
 
 .skills-image img {
-  width: 100%;
-  height: 100%; /* Make the image fill its container */
-  object-fit: cover; /* Maintain aspect ratio and fit the container */
-  border-radius: 0; /* Remove rounded corners to fit the split-screen */
-  box-shadow: none; /* Remove the shadow for the split-screen layout */
+  max-width: 100%;
+  max-height: 0%; /* Ensure image doesn't exceed container height */
+  height: auto;
+  border-radius: 0px;
+  object-fit: fill; /* Maintain aspect ratio and fit within the container */
 }
 
 .skills-image .caption {
@@ -257,19 +253,15 @@ section {
 /* Mobile View (Screens less than 768px) */
 @media (max-width: 768px) {
   .skills-content {
-    flex-direction: column; /* Stack text and image vertically on mobile */
+    flex-direction: column; /* Stacks the list and image vertically */
   }
 
-  .skills ul,
   .skills-image {
-    width: 100%; /* Full width for each on mobile */
-    height: auto; /* Allow height to adjust */
-  }
-
-  .skills-image img {
-    height: auto; /* Ensure the image adjusts in height as needed */
+    margin-left: 0;
+    margin-top: 20px; /* Adds space above the image in mobile view */
   }
 }
+
 /* Footer */
 footer {
   background-color: #333333;
