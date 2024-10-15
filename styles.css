@@ -229,6 +229,7 @@ section {
 /* Image and Caption Styling */
 .skills-image {
   flex: 1;
+  width: 50%; /* Make the image fill half of the section */
   margin-left: 30px; /* Space between the image and the list */
   display: flex;
   flex-direction: column;
@@ -237,9 +238,8 @@ section {
 }
 
 .skills-image img {
-  max-width: 100%;
+  width: 100%; /* Make the image fill the entire container */
   max-height: 80%; /* Ensure image doesn't exceed container height */
-  height: auto;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
   object-fit: cover; /* Maintain aspect ratio and fit within the container */
@@ -251,6 +251,20 @@ section {
   text-align: center;
   margin-top: 8px;
 }
+
+/* Mobile View (Screens less than 768px) */
+@media (max-width: 768px) {
+  .skills-content {
+    flex-direction: column; /* Stacks the list and image vertically */
+  }
+
+  .skills-image {
+    width: 100%; /* Image takes full width on mobile */
+    margin-left: 0;
+    margin-top: 20px; /* Adds space above the image in mobile view */
+  }
+}
+
 
 /* Mobile View (Screens less than 768px) */
 @media (max-width: 768px) {
