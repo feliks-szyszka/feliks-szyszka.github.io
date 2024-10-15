@@ -196,13 +196,14 @@ section {
   color: #333333;
 }
 
-/* Flex container for equal split */
+/* Flex container for split-screen */
 .skills-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap; /* Allows content to wrap on smaller screens */
-  gap: 20px; /* Optional spacing between columns */
+  flex-direction: row; /* Horizontal layout for desktop */
+  height: 100%; /* Ensure full height of the section is used */
+  gap: 20px; /* Optional: Adds spacing between text and image */
 }
 
 /* Text content takes 50% */
@@ -210,7 +211,7 @@ section {
   list-style: none;
   padding: 0;
   margin: 0;
-  width: 50%; /* Occupy half of the section */
+  width: 50%; /* Half of the section */
 }
 
 .skills ul li {
@@ -231,17 +232,19 @@ section {
 
 /* Image content takes 50% */
 .skills-image {
-  width: 50%; /* Image container takes half of the section */
+  width: 50%; /* Half of the section */
+  height: 100%; /* Ensure it stretches vertically */
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
 .skills-image img {
-  width: 100%; /* Image fills its container */
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  object-fit: cover; /* Maintain aspect ratio and fit within the container */
+  width: 100%;
+  height: 100%; /* Make the image fill its container */
+  object-fit: cover; /* Maintain aspect ratio and fit the container */
+  border-radius: 0; /* Remove rounded corners to fit the split-screen */
+  box-shadow: none; /* Remove the shadow for the split-screen layout */
 }
 
 .skills-image .caption {
@@ -254,16 +257,19 @@ section {
 /* Mobile View (Screens less than 768px) */
 @media (max-width: 768px) {
   .skills-content {
-    flex-direction: column; /* Stack text and image vertically */
+    flex-direction: column; /* Stack text and image vertically on mobile */
   }
 
   .skills ul,
   .skills-image {
-    width: 100%; /* Full width on mobile */
-    margin-left: 0;
+    width: 100%; /* Full width for each on mobile */
+    height: auto; /* Allow height to adjust */
+  }
+
+  .skills-image img {
+    height: auto; /* Ensure the image adjusts in height as needed */
   }
 }
-
 /* Footer */
 footer {
   background-color: #333333;
