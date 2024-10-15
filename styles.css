@@ -252,7 +252,7 @@ section {
   height: auto;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
-  object-fit: cover; /* Maintain aspect ratio */
+  object-fit: stretch; /* Maintain aspect ratio */
 }
 
 /* Mobile View (Screens less than 768px) */
