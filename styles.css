@@ -199,7 +199,7 @@ section {
   width: 50%;
   position: relative; /* Changed from fixed to relative inside section */
   overflow-x: hidden;
-  padding-top: 20px;
+  padding-top: 0px;
 }
 
 /* Control the left side */
@@ -248,9 +248,7 @@ section {
 
 /* Style the image inside the centered container */
 .centered img {
-  max-width: 100%;
-  height: 100%;
-  object-fit: fill; /* Maintain aspect ratio */
+  object-fit: cover; /* Maintain aspect ratio */
 }
 
 /* Mobile View (Screens less than 768px) */
