@@ -13,100 +13,41 @@
   font-style: normal;
 }
 
-/* Apply Theme */
+/* Apply Light Theme */
 body {
   font-family: 'Space Grotesk', Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: var(--background-color);
-  color: var(--text-color);
-  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+  background-color: #f4f4f4;
+  color: #333333;
+  transition: background-color 0.3s ease; /* Smooth background color transition */
   opacity: 1; /* Ensure the body is fully opaque */
   transition: opacity 0.25s ease; /* Quick opacity transition for fade-out */
   max-height: 100vh; /* Adjust the height as needed */
   overflow-y: auto; /* Enable vertical scrolling */
 }
 
-/* Light and Dark Theme Variables */
-:root {
-  --background-color: #f4f4f4;
-  --text-color: #333333;
-  --navbar-background: rgba(255, 255, 255, 0.8);
-  --navbar-button-background: rgba(255, 255, 255, 0.9);
-  --navbar-button-hover: #f1f1f1;
-  --navbar-button-active: #f0f0f0;
-  --shadow-color: rgba(0, 0, 0, 0.15);
-}
-
-body.dark-mode {
-  --background-color: #333333;
-  --text-color: #f4f4f4;
-  --navbar-background: rgba(50, 50, 50, 0.8);
-  --navbar-button-background: rgba(50, 50, 50, 0.9);
-  --navbar-button-hover: #444444;
-  --navbar-button-active: #555555;
-  --shadow-color: rgba(255, 255, 255, 0.15);
-}
-
-/* Toggle Switch for Dark Mode */
-.toggle-switch {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 1001; /* Above other elements */
-}
-
-.toggle-switch input[type="checkbox"] {
-  display: none;
-}
-
-.toggle-switch label {
-  display: block;
-  width: 50px;
-  height: 25px;
-  background-color: #ccc;
-  border-radius: 25px;
-  position: relative;
-  cursor: pointer;
-}
-
-.toggle-switch label::after {
-  content: "";
-  width: 23px;
-  height: 23px;
-  background-color: white;
-  border-radius: 50%;
-  position: absolute;
-  top: 1px;
-  left: 1px;
-  transition: 0.3s;
-}
-
-.toggle-switch input[type="checkbox"]:checked + label::after {
-  left: 26px;
-}
-
-.toggle-switch input[type="checkbox"]:checked + label {
-  background-color: #666;
+/* Fade Out Effect */
+.fade-out {
+  opacity: 0; /* Fade out to transparent */
 }
 
 /* Navbar Styling */
 .navbar {
   display: flex;
-  justify-content: center; /* Center the items */
+  justify-content: flex-start; /* Align items to the start (left) */
   align-items: center;
   width: auto; /* Allow it to adjust based on content */
-  background: var(--navbar-background);
-  backdrop-filter: blur(10px);
-  padding: 10px 20px; /* Equal padding for navbar */
-  border-radius: 50px;
-  box-shadow: 0 5px 15px var(--shadow-color); /* Reduced shadow */
-  position: fixed;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 1); /* No blur */
+  padding: 10px 20px; /* Adjusted padding */
+  border-radius: 50px; /* Keep rounded edges for pill shape */
+  position: fixed; /* Make it fixed to the viewport */
+  top: 20px; /* Slightly below the top edge */
+  left: 50%; /* Center it horizontally */
+  transform: translateX(-50%); /* Offset to center the navbar */
   z-index: 1000; /* Ensures the navbar is above other content */
   overflow-y: auto;
+  box-shadow: none; /* No shadow */
 }
 
 /* Navbar List */
@@ -127,13 +68,11 @@ body.dark-mode {
   align-items: center;
   padding: 8px 16px;
   text-decoration: none;
-  color: var(--text-color);
+  color: #111111;
   border-radius: 50px;
   font-size: 18px;
   font-weight: 400;
-  backdrop-filter: blur(10px);
-  background: var(--navbar-button-background);
-  box-shadow: none; /* Remove shadows for less neumorphism */
+  background: rgba(255, 255, 255, 1); /* No blur */
   transition: all 0.3s ease; /* Maintain transition for buttons */
 }
 
@@ -144,13 +83,13 @@ body.dark-mode {
 
 /* Hover State */
 .navbar ul li a:hover {
-  background-color: var(--navbar-button-hover);
+  background-color: #f1f1f1;
 }
 
 /* Active Button */
 .navbar ul li a.active {
-  background-color: var(--navbar-button-active);
-  color: var(--text-color);
+  background-color: #f0f0f0;
+  color: #111111;
 }
 
 /* Main content container */
@@ -166,7 +105,7 @@ section {
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: var(--text-color);
+  color: #fff;
   overflow: hidden;
 }
 
@@ -176,10 +115,10 @@ section {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  z-index: -1;
+  object-fit: cover; /* Ensure the video covers the entire section */
+  z-index: -1; /* Ensure the video is behind the content */
   opacity: 1; /* Adjust transparency */
-  filter: brightness(0.5); /* Adjust the brightness */
+  filter: brightness(0.5); /* Adjust the brightness (0 = black, 1 = original, >1 = brighter) */
 }
 
 .intro-text {
@@ -214,15 +153,15 @@ section {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 100%;
+    width: 100%; /* 100vw for the full width based on 16:9 aspect ratio */
     height: 100vh;
-    pointer-events: none;
+    pointer-events: none; /* Disable interaction with the video */
     object-fit: cover; /* Ensures the video covers the section */
 }
 
 /* About Section */
 .about {
-  background-color: var(--background-color);
+  background-color: #f9f9f9;
   padding: 60px 10%;
   text-align: left;
 }
@@ -230,12 +169,12 @@ section {
 .about h2 {
   font-size: 28px;
   font-weight: 500;
-  color: var(--text-color);
+  color: #333333;
 }
 
 .about p {
   font-size: 18px;
-  color: var(--text-color);
+  color: #666666;
   margin-top: 10px;
   line-height: 1.6;
 }
@@ -261,14 +200,14 @@ section {
 /* Control the left side */
 .left {
   left: 0;
-  background-color: var(--background-color);
-  color: var(--text-color);
+  background-color: #f4f4f4; /* Light background for text */
+  color: #333; /* Darker text color for readability */
 }
 
 /* Control the right side */
 .right {
   right: 0;
-  background-color: var(--background-color);
+  background-color: #ffffff; /* Background for image section */
 }
 
 /* Center content vertically and horizontally */
@@ -290,11 +229,11 @@ section {
   margin: 10px 0;
   padding-left: 20px;
   position: relative;
-  color: var(--text-color); /* Adapt to theme */
+  color: #666; /* Slightly lighter color for list text */
 }
 .centered ul li::before {
   content: '•';
-  color: var(--text-color);
+  color: #333;
   position: absolute;
   left: 0;
   font-size: 20px;
@@ -330,8 +269,8 @@ section {
 
 /* Footer */
 footer {
-  background-color: var(--background-color);
-  color: var(--text-color);
+  background-color: #333333;
+  color: #ffffff;
   text-align: center;
   padding: 20px 10%;
 }
@@ -341,7 +280,7 @@ footer p {
 }
 
 footer a {
-  color: var(--text-color);
+  color: #ffffff;
   text-decoration: underline;
 }
 
