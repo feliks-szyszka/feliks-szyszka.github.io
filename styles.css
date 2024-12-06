@@ -39,7 +39,7 @@ body {
   align-items: center;
   width: auto; /* Allow it to adjust based on content */
   background: rgba(255, 255, 255, 1); /* No blur */
-  padding: 10px 20px; /* Adjusted padding */
+  padding: 10px 5px; /* Adjusted padding */
   border-radius: 50px; /* Keep rounded edges for pill shape */
   position: fixed; /* Make it fixed to the viewport */
   top: 20px; /* Slightly below the top edge */
@@ -47,7 +47,7 @@ body {
   transform: translateX(-50%); /* Offset to center the navbar */
   z-index: 1000; /* Ensures the navbar is above other content */
   overflow-y: auto;
-  box-shadow: none; /* No shadow */
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1); /* Add centered drop shadow */
 }
 
 /* Navbar List */
@@ -59,10 +59,9 @@ body {
 }
 
 .navbar ul li {
-  margin: 0 10px;
+  margin: 0 5px;
 }
 
-/* Button Effect without Gradients */
 .navbar ul li a {
   display: flex;
   align-items: center;
@@ -90,6 +89,7 @@ body {
 .navbar ul li a.active {
   background-color: #f0f0f0;
   color: #111111;
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.3);
 }
 
 /* Main content container */
@@ -161,7 +161,7 @@ section {
 
 /* About Section */
 .about {
-  background-color: #f9f9f9;
+  background-color: #f4f4f4;
   padding: 60px 10%;
   text-align: left;
 }
@@ -179,93 +179,76 @@ section {
   line-height: 1.6;
 }
 
+/* Style for the 'Portfolio' link */
+.about a {
+  color: #007bff; /* Link color */
+  text-decoration: none; /* Remove underline */
+  font-weight: 500; /* Make the link bold */
+  transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.about a:hover {
+  color: #0056b3; /* Darker shade on hover */
+}
+
+
 /* Skills Section */
 .skills {
-  position: relative;
-  height: 100vh; /* Full screen height */
+  background-color: #f9f9f9;
+  padding: 60px 10%;
+  text-align: center;
   display: flex;
-  align-items: stretch;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Split the screen in half */
-.split {
-  height: 100%;
-  width: 50%;
-  position: relative; /* Changed from fixed to relative inside section */
-  overflow-x: hidden;
-  padding-top: 0px;
+.skills h2 {
+  font-size: 28px;
+  font-weight: 500;
+  color: #333333;
 }
 
-/* Control the left side */
-.left {
-  left: 0;
-  background-color: #f4f4f4; /* Light background for text */
-  color: #333; /* Darker text color for readability */
-}
-
-/* Control the right side */
-.right {
-  right: 0;
-  background-color: #ffffff; /* Background for image section */
-}
-
-/* Center content vertically and horizontally */
-.centered {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: left; /* Left-align text in the left section */
-}
-
-/* Style for the skills list */
-.centered ul {
-  list-style-type: none;
-  padding: 0;
+.skills p, .skills ul {
   font-size: 18px;
+  color: #666666;
+  margin-top: 10px;
+  line-height: 1.6;
+  text-align: center; /* Center-align text within ul */
 }
-.centered ul li {
+
+.skills ul {
+  padding: 0;
+}
+
+.skills ul li {
+  list-style-type: none;
   margin: 10px 0;
-  padding-left: 20px;
-  position: relative;
-  color: #666; /* Slightly lighter color for list text */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.centered ul li::before {
+
+.skills ul li::before {
   content: '•';
   color: #333;
-  position: absolute;
-  left: 0;
   font-size: 20px;
-}
-
-/* Style the image inside the centered container */
-.centered img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Maintain aspect ratio */
+  margin-right: 10px; /* Add space between bullet and text */
 }
 
 /* Mobile View (Screens less than 768px) */
 @media (max-width: 768px) {
-  .split {
-    width: 100%; /* Full width for each section */
-    height: 50%; /* Each section takes half the height */
-    position: relative;
+  .skills {
+    height: auto; /* Adjust height for mobile */
+    padding: 20px;
+    text-align: center; /* Ensure text remains centered on mobile */
   }
 
-  .left {
-    top: 0;
-  }
-
-  .right {
-    top: 50%;
-  }
-
-  .centered {
-    text-align: center; /* Center text on mobile */
+  .skills h2, .skills p, .skills ul {
+    text-align: center; /* Ensure text remains centered on mobile */
   }
 }
+
 
 /* Footer */
 footer {
