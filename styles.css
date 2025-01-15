@@ -196,11 +196,11 @@ section {
 .skills {
   background-color: #f9f9f9;
   padding: 60px 10%;
-  text-align: center;
+  text-align: left;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: left;
+  justify-content: left;
 }
 
 .skills h2 {
@@ -225,8 +225,8 @@ section {
   list-style-type: none;
   margin: 10px 0;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: left;
+  justify-content: left;
 }
 
 .skills ul li::before {
