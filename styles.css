@@ -1,13 +1,13 @@
 /* Import Local Font */
 @font-face {
-  font-family: 'Space Grotesk';
+  font-family: 'Inter';
   src: url('fonts/Inter_28pt-Medium.ttf') format('truetype');
   font-weight: 500; /* Medium weight */
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Space Grotesk';
+  font-family: 'Inter';
   src: url('fonts/Inter_28pt-Regular.ttf') format('truetype');
   font-weight: 400; /* Regular weight */
   font-style: normal;
