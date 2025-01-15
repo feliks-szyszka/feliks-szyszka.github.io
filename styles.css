@@ -199,8 +199,8 @@ section {
   text-align: left;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; 
-  justify-content: flex-start; 
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
 .skills h2 {
@@ -214,7 +214,7 @@ section {
   color: #666666;
   margin-top: 10px;
   line-height: 1.6;
-  text-align: left; 
+  text-align: left;
 }
 
 .skills ul {
@@ -241,14 +241,13 @@ section {
   .skills {
     height: auto;
     padding: 20px;
-    text-align: center; 
+    text-align: flex-start;
   }
 
   .skills h2, .skills p, .skills ul {
-    text-align: center; 
+    text-align: flex-start;
   }
 }
-
 
 /* Footer */
 footer {
