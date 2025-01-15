@@ -42,15 +42,15 @@
           <h2>Skills</h2>
           <ul>
                 <li>Web Development (HTML, CSS, JavaScript)</li>
+                <li>Software Development (Python)</li>
+                <li>App Development (MIT App Inventor)</li>
                 <li>Embedded Systems (CircuitPython, MicroPython, Arduino IDE)</li>
-                <li>Python (Desktop Applications)</li>
-                <li>MIT App Inventor (Mobile Applications)</li>
-                <li>Linux Terminal & Scripting</li>
+                <li>Linux Terminal (Debian-Based Distros)</li>
                 <li>3D Modeling & Animation (Blender)</li>
                 <li>Graphic Design (Affinity/Adobe Suite)</li>
-                <li>Video Editing (Wondershare Filmora)</li>
-                <li>3D CAD (Ansys, OnShape, FreeCAD, Fusion 360)</li>
-                <li>3D Printing (Slicing Software)</li>
+                <li>Video Editing (DaVinci Resolve)</li>
+                <li>3D CAD (DesignSpark, FreeCAD)</li>
+                <li>3D Printing (Modded Ender 3 Pro)</li>
                 <li>My PC (i5-3570K, 8GB RAM, GTX 750Ti, 500GB SSD)</li>
             </ul>
         </div>
@@ -63,11 +63,16 @@
         <p><a href="contact.html">Get in Touch</a></p>
     </footer>
 
-    <!-- JavaScript for Dynamic Age Calculation -->
-    <script>
-        const currentYear = new Date().getFullYear();
-        const age = currentYear - 2010;
-        document.getElementById('age').textContent = age;
-    </script>
+<!-- JavaScript for Dynamic Age Calculation -->
+<script>
+    const birthDate = new Date('2010-05-21');
+    const today = new Date();
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const monthDifference = today.getMonth() - birthDate.getMonth();
+    if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+    }
+    document.getElementById('age').textContent = age;
+</script>
 </body>
 </html>
