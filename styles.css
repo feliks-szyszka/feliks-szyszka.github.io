@@ -1,21 +1,21 @@
 /* Import Local Font */
 @font-face {
   font-family: 'Space Grotesk';
-  src: url('fonts/SpaceGrotesk-Medium.ttf') format('truetype');
+  src: url('fonts/Inter_28pt-Medium.ttf') format('truetype');
   font-weight: 500; /* Medium weight */
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Space Grotesk';
-  src: url('fonts/SpaceGrotesk-Regular.ttf') format('truetype');
+  src: url('fonts/Inter_28pt-Regular.ttf') format('truetype');
   font-weight: 400; /* Regular weight */
   font-style: normal;
 }
 
 /* Apply Light Theme */
 body {
-  font-family: 'Space Grotesk', Arial, sans-serif;
+  font-family: 'Inter', Arial, sans-serif;
   margin: 0;
   padding: 0;
   background-color: #f4f4f4;
