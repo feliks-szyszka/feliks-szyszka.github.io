@@ -304,7 +304,7 @@ body {
   position: absolute;
   top: 50%;
   left: 50px;
-  transform: translateY(-50%);
+  transform: translateY(-28px);
   font-size: 36px;
   color: white;
   padding: 10px;
