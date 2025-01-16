@@ -273,14 +273,53 @@ html {
 
 /* Fade-in animation */
 @keyframes fadeIn {
-  from {
-      opacity: 0;
-  }
-  to {
-      opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 body {
   animation: fadeIn 0.25s ease-in; /* Quick fade-in animation for body */
+}
+
+/* Portfolio Section */
+.portfolio-section {
+  position: relative;
+  background-color: #f2f2f2;
+  height: 300px;
+  margin: 20px 0;
+  transition: background-color 0.3s ease;
+}
+
+.portfolio-section:hover {
+  background-color: #cccccc;
+}
+
+.portfolio-header {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  font-size: 24px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  transition: bottom 0.3s ease, background-color 0.3s ease;
+}
+
+.portfolio-section:hover .portfolio-header {
+  bottom: 60%;
+}
+
+.portfolio-description {
+  position: absolute;
+  left: 20px;
+  bottom: 0;
+  font-size: 14px;
+  color: white;
+  padding: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.portfolio-section:hover .portfolio-description {
+  opacity: 1;
 }
