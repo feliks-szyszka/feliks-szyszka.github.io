@@ -20,34 +20,34 @@ body {
   padding: 0;
   background-color: #f4f4f4;
   color: #333333;
-  transition: background-color 0.3s ease; /* Smooth background color transition */
-  opacity: 1; /* Ensure the body is fully opaque */
-  transition: opacity 0.25s ease; /* Quick opacity transition for fade-out */
-  max-height: 100vh; /* Adjust the height as needed */
-  overflow-y: auto; /* Enable vertical scrolling */
+  transition: background-color 0.3s ease, opacity 0.25s ease;
+  opacity: 1;
+  max-height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 /* Fade Out Effect */
 .fade-out {
-  opacity: 0; /* Fade out to transparent */
+  opacity: 0;
 }
 
 /* Navbar Styling */
 .navbar {
   display: flex;
-  justify-content: flex-start; /* Align items to the start (left) */
+  justify-content: flex-start;
   align-items: center;
-  width: auto; /* Allow it to adjust based on content */
-  background: rgba(255, 255, 255, 1); /* No blur */
-  padding: 10px 5px; /* Adjusted padding */
-  border-radius: 50px; /* Keep rounded edges for pill shape */
-  position: fixed; /* Make it fixed to the viewport */
-  top: 20px; /* Slightly below the top edge */
-  left: 50%; /* Center it horizontally */
-  transform: translateX(-50%); /* Offset to center the navbar */
-  z-index: 1000; /* Ensures the navbar is above other content */
+  width: auto;
+  background: rgba(255, 255, 255, 1);
+  padding: 10px 5px;
+  border-radius: 50px;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
   overflow-y: auto;
-  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1); /* Add centered drop shadow */
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Navbar List */
@@ -71,8 +71,8 @@ body {
   border-radius: 50px;
   font-size: 18px;
   font-weight: 400;
-  background: rgba(255, 255, 255, 1); /* No blur */
-  transition: all 0.3s ease; /* Maintain transition for buttons */
+  background: rgba(255, 255, 255, 1);
+  transition: all 0.3s ease;
 }
 
 .navbar ul li a .icon {
@@ -94,17 +94,21 @@ body {
 
 /* Main content container */
 section {
-  padding: 50px 10%; /* Consistent padding for all sections */
-  width: 100vw; /* Full width of the screen */
-  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  padding: 50px 10%;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* Portfolio Section */
 .portfolio-section {
   position: relative;
-  height: 100vh; /* Full screen height */
-  width: 100%; /* Full width of the section */
+  height: 100vh;
+  width: 100vw;
   margin: 0;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
   transition: background-color 0.3s ease;
 }
 
@@ -124,12 +128,12 @@ section {
 }
 
 .portfolio-section:hover .portfolio-header {
-  top: 30px; /* Header moves up on hover */
+  top: 30px;
 }
 
 .portfolio-description {
   position: absolute;
-  top: 60%; /* Initially hidden */
+  top: 60%;
   left: 50px;
   font-size: 18px;
   color: white;
@@ -139,5 +143,5 @@ section {
 }
 
 .portfolio-section:hover .portfolio-description {
-  opacity: 1; /* Reveal description on hover */
+  opacity: 1;
 }
