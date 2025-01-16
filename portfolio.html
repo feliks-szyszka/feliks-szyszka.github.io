@@ -3,52 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
     <title>Feliks Szyszka's Portfolio</title>
-    <style>
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
-            padding: 20px;
-        }
-
-        .portfolio-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-
-        .portfolio-item:hover {
-            transform: scale(1.05);
-        }
-
-        .portfolio-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .portfolio-item-title {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background-color: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 10px;
-            text-align: center;
-            transform: translateY(100%);
-            transition: transform 0.3s ease;
-        }
-
-        .portfolio-item:hover .portfolio-item-title {
-            transform: translateY(0);
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -62,37 +18,35 @@
 
     <section class="portfolio">
         <h2>My Projects</h2>
-        <div class="portfolio-grid">
-            <div class="portfolio-item">
-                <img src="images/project1.jpg" alt="Project 1">
-                <div class="portfolio-item-title">Web Development Project</div>
-            </div>
-            <div class="portfolio-item">
-                <img src="images/project2.jpg" alt="Project 2">
-                <div class="portfolio-item-title">Embedded Systems Project</div>
-            </div>
-            <div class="portfolio-item">
-                <img src="images/project3.jpg" alt="Project 3">
-                <div class="portfolio-item-title">Python Desktop App</div>
-            </div>
-            <div class="portfolio-item">
-                <img src="images/project4.jpg" alt="Project 4">
-                <div class="portfolio-item-title">Mobile App Project</div>
-            </div>
-            <div class="portfolio-item">
-                <img src="images/project5.jpg" alt="Project 5">
-                <div class="portfolio-item-title">3D Modeling Project</div>
-            </div>
-            <div class="portfolio-item">
-                <img src="images/project6.jpg" alt="Project 6">
-                <div class="portfolio-item-title">Graphic Design Project</div>
-            </div>
+        <div class="portfolio-section" style="background-color: #ff6347;">
+            <div class="portfolio-header">Web Development Project</div>
+            <div class="portfolio-description">HTML, CSS, and JavaScript</div>
+        </div>
+        <div class="portfolio-section" style="background-color: #4682b4;">
+            <div class="portfolio-header">Embedded Systems Project</div>
+            <div class="portfolio-description">Arduino and C++</div>
+        </div>
+        <div class="portfolio-section" style="background-color: #3cb371;">
+            <div class="portfolio-header">Python Desktop App</div>
+            <div class="portfolio-description">Python and PyQt</div>
+        </div>
+        <div class="portfolio-section" style="background-color: #ffa07a;">
+            <div class="portfolio-header">Mobile App Project</div>
+            <div class="portfolio-description">React Native</div>
+        </div>
+        <div class="portfolio-section" style="background-color: #9370db;">
+            <div class="portfolio-header">3D Modeling Project</div>
+            <div class="portfolio-description">Blender</div>
+        </div>
+        <div class="portfolio-section" style="background-color: #87cefa;">
+            <div class="portfolio-header">Graphic Design Project</div>
+            <div class="portfolio-description">Adobe Illustrator</div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Feliks Szyszka. All Rights Reserved.</p>
+        <p>&copy; 2025 Feliks Szyszka. All Rights Reserved.</p>
         <p>Website made in pure HTML and CSS.</p>
         <p><a href="contact.html">Get in Touch</a></p>
     </footer>
