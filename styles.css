@@ -97,223 +97,38 @@ section {
   padding: 50px 10%; /* Consistent padding for all sections */
 }
 
-/* Hero Section */
-.hero {
-  position: relative;
-  min-height: 90vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: #fff;
-  overflow: hidden;
-}
-
-#hero-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ensure the video covers the entire section */
-  z-index: -1; /* Ensure the video is behind the content */
-  opacity: 1; /* Adjust transparency */
-  filter: brightness(0.5); /* Adjust the brightness (0 = black, 1 = original, >1 = brighter) */
-}
-
-.intro-text {
-  position: relative;
-  z-index: 1;
-}
-
-.hero h1 {
-  font-size: 48px;
-  font-weight: 500;
-  margin: 0;
-}
-
-.hero p {
-  font-size: 20px;
-  margin-top: 10px;
-}
-
-/* Full-Screen Video Background */
-.video-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: -1; /* Keep the video behind the content */
-}
-
-#youtube-video {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%; /* 100vw for the full width based on 16:9 aspect ratio */
-    height: 100vh;
-    pointer-events: none; /* Disable interaction with the video */
-    object-fit: cover; /* Ensures the video covers the section */
-}
-
-/* About Section */
-.about {
-  background-color: #f4f4f4;
-  padding: 60px 10%;
-  text-align: left;
-}
-
-.about h2 {
-  font-size: 28px;
-  font-weight: 500;
-  color: #333333;
-}
-
-.about p {
-  font-size: 18px;
-  color: #666666;
-  margin-top: 10px;
-  line-height: 1.6;
-}
-
-/* Style for the 'Portfolio' link */
-.about a {
-  color: #007bff; /* Link color */
-  text-decoration: none; /* Remove underline */
-  font-weight: 500; /* Make the link bold */
-  transition: color 0.3s ease; /* Smooth color transition on hover */
-}
-
-.about a:hover {
-  color: #0056b3; /* Darker shade on hover */
-}
-
-
-/* Skills Section */
-.skills {
-  background-color: #f9f9f9;
-  padding: 60px 10%;
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-
-.skills h2 {
-  font-size: 28px;
-  font-weight: 500;
-  color: #333333;
-}
-
-.skills p, .skills ul {
-  font-size: 18px;
-  color: #666666;
-  margin-top: 10px;
-  line-height: 1.6;
-  text-align: left;
-}
-
-.skills ul {
-  padding: 0;
-}
-
-.skills ul li {
-  list-style-type: none;
-  margin: 10px 0;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-
-.skills ul li::before {
-  content: '•';
-  color: #333;
-  font-size: 20px;
-  margin-right: 10px;
-}
-
-/* Mobile View (Screens less than 768px) */
-@media (max-width: 768px) {
-  .skills {
-    height: auto;
-    padding: 20px;
-    text-align: flex-start;
-  }
-
-  .skills h2, .skills p, .skills ul {
-    text-align: flex-start;
-  }
-}
-
-/* Footer */
-footer {
-  background-color: #333333;
-  color: #ffffff;
-  text-align: center;
-  padding: 20px 10%;
-}
-
-footer p {
-  margin: 5px 0;
-}
-
-footer a {
-  color: #ffffff;
-  text-decoration: underline;
-}
-
-/* Smooth page transitions */
-html {
-  overflow: visible; /* Allow scrolling */
-}
-
-/* Fade-in animation */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-body {
-  animation: fadeIn 0.25s ease-in; /* Quick fade-in animation for body */
-}
-
 /* Portfolio Section */
 .portfolio-section {
   position: relative;
-  background-color: #f2f2f2;
-  height: 300px;
-  margin: 20px 0;
+  height: 100vh; /* Full screen height */
+  margin: 0;
   transition: background-color 0.3s ease;
 }
 
 .portfolio-section:hover {
-  background-color: #cccccc;
+  background-color: #333;
 }
 
 .portfolio-header {
   position: absolute;
-  left: 20px;
-  bottom: 20px;
-  font-size: 24px;
+  top: 50%;
+  left: 50px;
+  transform: translateY(-50%);
+  font-size: 36px;
   color: white;
-  background-color: rgba(0, 0, 0, 0.5);
   padding: 10px;
-  transition: bottom 0.3s ease, background-color 0.3s ease;
+  transition: top 0.3s ease;
 }
 
 .portfolio-section:hover .portfolio-header {
-  bottom: 60%;
+  top: 30px; /* Header moves up on hover */
 }
 
 .portfolio-description {
   position: absolute;
-  left: 20px;
-  bottom: 0;
-  font-size: 14px;
+  top: 60%; /* Initially hidden */
+  left: 50px;
+  font-size: 18px;
   color: white;
   padding: 10px;
   opacity: 0;
@@ -321,5 +136,5 @@ body {
 }
 
 .portfolio-section:hover .portfolio-description {
-  opacity: 1;
+  opacity: 1; /* Reveal description on hover */
 }
