@@ -95,12 +95,15 @@ body {
 /* Main content container */
 section {
   padding: 50px 10%; /* Consistent padding for all sections */
+  width: 100vw; /* Full width of the screen */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
 /* Portfolio Section */
 .portfolio-section {
   position: relative;
   height: 100vh; /* Full screen height */
+  width: 100%; /* Full width of the section */
   margin: 0;
   transition: background-color 0.3s ease;
 }
