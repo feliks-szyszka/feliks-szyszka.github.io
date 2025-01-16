@@ -1,3 +1,4 @@
+
 /* Import Local Font */
 @font-face {
   font-family: 'Inter';
@@ -20,34 +21,34 @@ body {
   padding: 0;
   background-color: #f4f4f4;
   color: #333333;
-  transition: background-color 0.3s ease, opacity 0.25s ease;
-  opacity: 1;
-  max-height: 100vh;
-  overflow-y: auto;
-  overflow-x: hidden; /* Prevent horizontal scrolling */
+  transition: background-color 0.3s ease; /* Smooth background color transition */
+  opacity: 1; /* Ensure the body is fully opaque */
+  transition: opacity 0.25s ease; /* Quick opacity transition for fade-out */
+  max-height: 100vh; /* Adjust the height as needed */
+  overflow-y: auto; /* Enable vertical scrolling */
 }
 
 /* Fade Out Effect */
 .fade-out {
-  opacity: 0;
+  opacity: 0; /* Fade out to transparent */
 }
 
 /* Navbar Styling */
 .navbar {
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-start; /* Align items to the start (left) */
   align-items: center;
-  width: auto;
-  background: rgba(255, 255, 255, 1);
-  padding: 10px 5px;
-  border-radius: 50px;
-  position: fixed;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1000;
+  width: auto; /* Allow it to adjust based on content */
+  background: rgba(255, 255, 255, 1); /* No blur */
+  padding: 10px 5px; /* Adjusted padding */
+  border-radius: 50px; /* Keep rounded edges for pill shape */
+  position: fixed; /* Make it fixed to the viewport */
+  top: 20px; /* Slightly below the top edge */
+  left: 50%; /* Center it horizontally */
+  transform: translateX(-50%); /* Offset to center the navbar */
+  z-index: 1000; /* Ensures the navbar is above other content */
   overflow-y: auto;
-  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1); /* Add centered drop shadow */
 }
 
 /* Navbar List */
@@ -71,8 +72,8 @@ body {
   border-radius: 50px;
   font-size: 18px;
   font-weight: 400;
-  background: rgba(255, 255, 255, 1);
-  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 1); /* No blur */
+  transition: all 0.3s ease; /* Maintain transition for buttons */
 }
 
 .navbar ul li a .icon {
@@ -94,22 +95,205 @@ body {
 
 /* Main content container */
 section {
-  padding: 50px 10%;
+  padding: 50px 10%; /* Consistent padding for all sections */
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+#hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  box-sizing: border-box;
+  height: 100%;
+  object-fit: cover; /* Ensure the video covers the entire section */
+  z-index: -1; /* Ensure the video is behind the content */
+  opacity: 1; /* Adjust transparency */
+  filter: brightness(0.5); /* Adjust the brightness (0 = black, 1 = original, >1 = brighter) */
+}
+
+.intro-text {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 48px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.hero p {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+/* Full-Screen Video Background */
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; /* Keep the video behind the content */
+}
+
+#youtube-video {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%; /* 100vw for the full width based on 16:9 aspect ratio */
+    height: 100vh;
+    pointer-events: none; /* Disable interaction with the video */
+    object-fit: cover; /* Ensures the video covers the section */
+}
+
+/* About Section */
+.about {
+  background-color: #f4f4f4;
+  padding: 60px 10%;
+  text-align: left;
+}
+
+.about h2 {
+  font-size: 28px;
+  font-weight: 500;
+  color: #333333;
+}
+
+.about p {
+  font-size: 18px;
+  color: #666666;
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
+/* Style for the 'Portfolio' link */
+.about a {
+  color: #007bff; /* Link color */
+  text-decoration: none; /* Remove underline */
+  font-weight: 500; /* Make the link bold */
+  transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.about a:hover {
+  color: #0056b3; /* Darker shade on hover */
+}
+
+
+/* Skills Section */
+.skills {
+  background-color: #f9f9f9;
+  padding: 60px 10%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.skills h2 {
+  font-size: 28px;
+  font-weight: 500;
+  color: #333333;
+}
+
+.skills p, .skills ul {
+  font-size: 18px;
+  color: #666666;
+  margin-top: 10px;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.skills ul {
+  padding: 0;
+}
+
+.skills ul li {
+  list-style-type: none;
+  margin: 10px 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.skills ul li::before {
+  content: '•';
+  color: #333;
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+/* Mobile View (Screens less than 768px) */
+@media (max-width: 768px) {
+  .skills {
+    height: auto;
+    padding: 20px;
+    text-align: flex-start;
+  }
+
+  .skills h2, .skills p, .skills ul {
+    text-align: flex-start;
+  }
+}
+
+/* Footer */
+footer {
+  background-color: #333333;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px 10%;
+}
+
+footer p {
+  margin: 5px 0;
+}
+
+footer a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* Smooth page transitions */
+html {
+  overflow: visible; /* Allow scrolling */
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+body {
+  animation: fadeIn 0.25s ease-in; /* Quick fade-in animation for body */
 }
 
 /* Portfolio Section */
 .portfolio-section {
   position: relative;
-  height: 100vh;
-  width: 100vw;
+  height: 100vh; /* Full screen height */
+  width: 100vw; /* Full width of the viewport */
   margin: 0;
   left: 50%;
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
   transition: background-color 0.3s ease;
+  overflow: hidden; /* Prevent content from spilling out */
 }
 
 .portfolio-section:hover {
@@ -128,12 +312,12 @@ section {
 }
 
 .portfolio-section:hover .portfolio-header {
-  top: 30px;
+  top: 30px; /* Header moves up on hover */
 }
 
 .portfolio-description {
   position: absolute;
-  top: 60%;
+  top: 60%; /* Initially hidden */
   left: 50px;
   font-size: 18px;
   color: white;
@@ -143,5 +327,5 @@ section {
 }
 
 .portfolio-section:hover .portfolio-description {
-  opacity: 1;
+  opacity: 1; /* Reveal description on hover */
 }
