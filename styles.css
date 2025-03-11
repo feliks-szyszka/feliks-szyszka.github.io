@@ -2,6 +2,13 @@
 /* Import Local Font */
 @font-face {
   font-family: 'Inter';
+  src: url('fonts/Inter_28pt-Bold.ttf') format('truetype');
+  font-weight: 800; /* Heavy weight */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
   src: url('fonts/Inter_28pt-Medium.ttf') format('truetype');
   font-weight: 500; /* Medium weight */
   font-style: normal;
@@ -128,8 +135,8 @@ section {
 }
 
 .hero h1 {
-  font-size: 48px;
-  font-weight: 500;
+  font-size: 64px;
+  font-weight: 800;
   margin: 0;
 }
 
@@ -333,8 +340,83 @@ body {
 }
 
 /* Tone down background colors */
-.project-1 { background-color: #FF7F50; }
-.project-2 { background-color: #66CD66; }
-.project-3 { background-color: #7EC0EE; }
-.project-4 { background-color: #FF6EB4; }
-.project-5 { background-color: #40E0D0; }
+.project-1 { background-color: #5f92d4; }
+.project-2 { background-color: #174a68; }
+
+/* Add these styles for the fade-in animation */
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(30px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.intro-text h1 {
+  animation: fadeInUp 1s cubic-bezier(.43,-0.01,.35,1.01);
+}
+
+/* Container for the scrolling text */
+#slideshow {
+  position: relative;
+  display: inline-block;
+  height: 1em; /* Matches the line height of the text */
+  overflow: hidden; /* Ensures only one line of text is visible */
+  vertical-align: middle; /* Aligns with static text */
+}
+
+/* Each scrolling word */
+#slideshow span {
+  position: absolute;
+  width: 100%; /* Ensures text spans the full width of the container */
+  height: 100%;
+  line-height: 1em; /* Matches the height of the container */
+  transform: translateY(100%); /* Start below the container */
+  animation: slide 8s linear infinite; /* Apply animation */
+  opacity: 0; /* Initially hidden */
+}
+
+/* Animation delays for each word */
+#slideshow span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+#slideshow span:nth-child(2) {
+  animation-delay: 2s;
+}
+
+#slideshow span:nth-child(3) {
+  animation-delay: 4s;
+}
+
+#slideshow span:nth-child(4) {
+  animation-delay: 6s;
+}
+
+/* Keyframes for sliding effect */
+@keyframes slide {
+  0% {
+      transform: translateY(100%); /* Start below the container */
+      opacity: 0; /* Hidden */
+  }
+  10% {
+      transform: translateY(0); /* Slide into view */
+      opacity: 1; /* Fully visible */
+  }
+  30% {
+      transform: translateY(0); /* Stay in view */
+      opacity: 1; /* Fully visible */
+  }
+  40% {
+      transform: translateY(-100%); /* Slide out above the container */
+      opacity: 0; /* Hidden again */
+  }
+  100% {
+      transform: translateY(-100%); /* Stay out of view */
+      opacity: 0; /* Hidden again */
+  }
+}
+
