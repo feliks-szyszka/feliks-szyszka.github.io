@@ -7,7 +7,6 @@
     <title>Feliks Szyszka's Portfolio</title>
 </head>
 <body>
-    <!-- Navigation Bar -->
     <nav class="navbar">
         <ul>
             <li><a href="index.html" class="active">Home</a></li>
@@ -16,24 +15,25 @@
         </ul>
     </nav>
 
-    <!-- Hero Section with YouTube Video Background -->
     <section class="hero">
         <video autoplay muted loop id="hero-video">
             <source src="videos/placeholder.mp4" type="video/mp4">
-            Your browser does not support HTML5 video.
+            Your browser does does not support HTML5 video.
         </video>
         <div class="intro-text">
-            <h1>Hello! I'm Feliks.</h1>
-            <p>
-                <span id="slideshow">
-                    <span id="age">[Your Age] year old student</span>
-                    <span>Aspiring Engineer</span>
-                    <span>Amateur Software Developer</span>
-                    <span>Amateur Web Developer</span>
-                </span>
-
-            </p>
-        </div>        
+            <div class="sentence-container">
+                <div class="sentence slide-up">Hello, I'm Feliks.</div>
+                <div class="location slide-up">
+                    <img src="images/map-pin.svg" alt="Location Icon">
+                    <span>London, UK</span>
+                    <a href="https://github.com/feliks-szyszka"><img src="images/github-white.svg" alt="GitHub"></a>
+                    <a href="https://www.linkedin.com/in/feliks-szyszka/"><img src="images/linkedin-white.svg" alt="LinkedIn"></a>
+                    <a href="https://www.youtube.com/@feliksszyszka"><img src="images/youtube-white.svg" alt="YouTube"></a>
+                    <a href="contact.html"><img src="images/mail-white.svg" alt="Email"></a>
+                </div>
+            </div>
+        </div>
+        <img src="images/chevron-down.svg" alt="Down Arrow" class="arrow-down">
     </section>
 
     <section class="about">
@@ -65,18 +65,17 @@
         </ul>
     </section>
 
-    <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Feliks Szyszka. All Rights Reserved.</p>
+        <p>&copy; <span id="year">2025</span> Feliks Szyszka. All Rights Reserved.</p>
         <p>Website made in pure HTML and CSS.</p>
         <p><a href="contact.html">Get in Touch</a></p>
     </footer>
 
-<!-- JavaScript for Dynamic Age Calculation -->
 <script>
     const birthDate = new Date('2010-05-21');
     const today = new Date();
-    let age = today.getFullYear() - birthDate.getFullYear();
+    let age =  - birthDate.getFullYear();
+    let year = today.getFullYear();
     const monthDifference = today.getMonth() - birthDate.getMonth();
     if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthDate.getDate())) {
         age--;
