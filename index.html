@@ -3,84 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Feliks Szyszka's Portfolio</title>
+    <title>under construction</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111111; /* dark background */
+            color: #f4f4f4; /* light foreground */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+
+        .message-container {
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin: 0;
+            color: #f4f4f4;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
-    <nav class="navbar">
-        <ul>
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-
-    <section class="hero">
-        <video autoplay muted loop id="hero-video">
-            <source src="videos/placeholder.mp4" type="video/mp4">
-            Your browser does does not support HTML5 video.
-        </video>
-        <div class="intro-text">
-            <div class="sentence-container">
-                <div class="sentence slide-up">Hello, I'm Feliks.</div>
-                <div class="location slide-up">
-                    <img src="images/map-pin.svg" alt="Location Icon">
-                    <span>London, UK</span>
-                    <a href="https://github.com/feliks-szyszka"><img src="images/github-white.svg" alt="GitHub"></a>
-                    <a href="https://www.linkedin.com/in/feliks-szyszka/"><img src="images/linkedin-white.svg" alt="LinkedIn"></a>
-                    <a href="https://www.youtube.com/@feliksszyszka"><img src="images/youtube-white.svg" alt="YouTube"></a>
-                    <a href="contact.html"><img src="images/mail-white.svg" alt="Email"></a>
-                </div>
-            </div>
-        </div>
-        <img src="images/chevron-down.svg" alt="Down Arrow" class="arrow-down">
-    </section>
-
-    <section class="about">
-        <h2>About Me</h2>
-        <p>As a student with a strong interest in Engineering + Computer Science, I love exploring various fields from software development to embedded systems.
-            I'm constantly learning new skills and applying them to hands-on projects, with a focus on creating innovative and functional solutions.</p>
-        <p>Check out my <a href="portfolio.html">Portfolio</a> to see my work, including projects in programming, product design, and engineering.</p>
-    </section>
-
-    <section class="skills">
-        <h2>Skills and Tools</h2>
-        <p>Engineering & Design:</p>
-        <ul>
-            <li>3D CAD: DesignSpark, FreeCAD</li>
-            <li>3D Printing: Slicing Software, Ender 3 Pro</li>
-        </ul>
-        <p>Programming & Development:</p>
-        <ul>
-            <li>Web Development: HTML, CSS, JavaScript</li>
-            <li>Embedded Systems: CircuitPython, MicroPython, Arduino IDE</li>
-            <li>Software Development: Python</li>
-            <li>Mobile Development: MIT App Inventor</li>
-        </ul>
-        <p>Creative Tools:</p>
-        <ul>
-            <li>3D Rendering: Blender</li>
-            <li>Graphic Design: Affinity + Adobe Suite</li>
-            <li>Video Editing: DaVinci Resolve</li>
-        </ul>
-    </section>
-
-    <footer>
-        <p>&copy; <span id="year">2025</span> Feliks Szyszka. All Rights Reserved.</p>
-        <p>Website made in pure HTML and CSS.</p>
-        <p><a href="contact.html">Get in Touch</a></p>
-    </footer>
-
-<script>
-    const birthDate = new Date('2010-05-21');
-    const today = new Date();
-    let age =  - birthDate.getFullYear();
-    let year = today.getFullYear();
-    const monthDifference = today.getMonth() - birthDate.getMonth();
-    if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthDate.getDate())) {
-        age--;
-    }
-    document.getElementById('age').textContent = age;
-</script>
+    <div class="message-container">
+        <h1>under construction</h1>
+        <p>the 2025 portfolio isn't ready yet :P</p>
+    </div>
 </body>
 </html>
