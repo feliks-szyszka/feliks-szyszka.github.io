@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>feliks szyszka — about</title>
+    
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+
+    <style>
+        :root {
+            --bg: #ffffff;
+            --text-primary: #121212;
+            --text-secondary: #888888;
+            --ease: cubic-bezier(0.23, 1, 0.32, 1);
+            --container-padding: 5vw;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-primary);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        @supports (font-variation-settings: normal) {
+          body { font-family: 'Inter var', sans-serif; }
+        }
+
+        /* NAVIGATION */
+        nav {
+            position: fixed;
+            top: 0; width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem var(--container-padding);
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            font-weight: 500; font-size: 1.1rem;
+            text-decoration: none; color: var(--text-primary);
+            letter-spacing: -0.02em; text-transform: lowercase;
+        }
+
+        .nav-links { display: flex; gap: 2.5rem; }
+        .nav-links a {
+            text-decoration: none; color: var(--text-secondary);
+            font-size: 0.9rem; transition: color 0.3s var(--ease);
+            text-transform: lowercase; font-weight: 300;
+        }
+        .nav-links a:hover, .nav-links a.active { color: var(--text-primary); }
+
+        /* LAYOUT CONTAINER */
+        .container {
+            padding: 0 var(--container-padding);
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header { padding: 25vh 0 10vh; max-width: 900px; }
+        h1 { font-size: clamp(2.5rem, 6vw, 3.8rem); font-weight: 300; line-height: 1.15; letter-spacing: -0.03em; text-transform: lowercase; }
+
+        /* REVEAL CONTENT SPLIT MATRIX */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.20fr 0.80fr;
+            gap: 5rem;
+            margin-bottom: 12vh;
+            opacity: 0; transform: translateY(30px);
+            transition: opacity 1.2s var(--ease), transform 1.2s var(--ease);
+        }
+        .about-grid.reveal { opacity: 1; transform: translateY(0); }
+
+        .about-content { display: flex; flex-direction: column; gap: 1.5rem; }
+        .about-content p { font-size: 1.2rem; line-height: 1.6; font-weight: 300; color: var(--text-primary); }
+        
+        .skills-container { display: flex; flex-direction: column; }
+        .skills-title { font-size: 0.9rem; font-weight: 500; color: var(--text-primary); margin-bottom: 1.5rem; text-transform: lowercase; letter-spacing: -0.01em; }
+        
+        .skills-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+        .skills-list li { font-size: 1.05rem; color: var(--text-secondary); font-weight: 300; text-transform: lowercase; letter-spacing: -0.01em; }
+
+        /* FOOTER */
+        footer {
+            padding: 10vh 0 64px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .footer-links { display: flex; flex-direction: column; gap: 12px; }
+        .footer-links a { color: var(--text-primary); text-decoration: none; font-size: 15px; font-weight: 300; transition: color 0.3s var(--ease); text-transform: lowercase; }
+        .footer-links a:hover { color: var(--text-secondary); }
+        .footer-right { display: flex; flex-direction: column; gap: 12px; align-items: flex-end; }
+        .copyright { color: var(--text-secondary); font-size: 13px; font-weight: 300; text-transform: lowercase; }
+        .stats { color: #bbb; font-size: 11px; font-variant-numeric: tabular-nums; display: flex; gap: 16px; font-weight: 300; }
+
+        @media (max-width: 900px) {
+            .about-grid { grid-template-columns: 1fr; gap: 4rem; }
+        }
+        @media (max-width: 768px) {
+            .nav-links { gap: 1.5rem; }
+            footer { flex-direction: column; gap: 32px; }
+            .footer-right { align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">feliks szyszka</a>
+        <div class="nav-links">
+            <a href="index.html">work</a>
+            <a href="about.html" class="active">about</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <header>
+            <h1>student by day, engineer by night.</h1>
+        </header>
+
+        <section class="about-grid">
+            <div class="about-content">
+                <p>Hi. I'm Feliks. I design, engineer and manufacture embedded systems / electronic products in my spare time. It all started with an Ender 3 Pro 3D Printer, a soldering iron and a bit too much curiosity, which quickly became a deep desire to learn all the disciplines required to have the freedom to build whatever I wanted.</p>
+                <p>I believe the best products come from treating engineering, design, UX, and UI as one intertwined collection of skills rather than separate disciplines. At the end of the day a well-routed PCB is nothing without software, or components for that matter.</p>
+                <p>That's why I focus on building things that are pleasant to use, easy to assemble and repair, and provide the end user with excellent value... as Dieter Rams said: "less, but better".</p>
+            </div>
+
+            <div class="skills-container">
+                <h2 class="skills-title">skills and tools</h2>
+                <ul class="skills-list">
+                    <li>3D printing (ender 3 pro)</li>
+                    <li>blender</li>
+                    <li>computer aided design</li>
+                    <li>embedded systems</li>
+                    <li>linux</li>
+                    <li>microcontrollers</li>
+                    <li>pcb assembly</li>
+                    <li>product design</li>
+                    <li>systems thinking</li>
+                    <li>web development</li>
+                </ul>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-links">
+                <a href="mailto:feliks.szyszka@tutamail.com">email</a>
+                <a href="https://youtube.com/@feliksszyszka">youtube</a>
+                <a href="https://github.com/feliks-szyszka">github</a>
+            </div>
+            <div class="footer-right">
+                <div class="copyright">
+                    <span>&copy; <span id="year"></span> feliks szyszka — London, UK</span>
+                </div>
+                <div class="stats">
+                    <span id="filesize"></span>
+                    <span id="localtime"></span>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Controlled structural entry animation trigger
+        setTimeout(() => {
+            document.querySelector('.about-grid').classList.add('reveal');
+        }, 100);
+
+        // Environmental system log configurations
+        fetch(window.location.href)
+            .then(res => res.text())
+            .then(text => {
+                const sizeKB = (text.length / 1024).toFixed(3);
+                document.getElementById('filesize').textContent = sizeKB + ' KB';
+            })
+            .catch(() => {
+                document.getElementById('filesize').textContent = '~4.8 KB';
+            });
+
+        const timeEl = document.getElementById('localtime');
+        const updateTime = () => {
+            const now = new Date();
+            timeEl.textContent = now.toLocaleTimeString('en-GB', { hour12: false });
+        };
+        updateTime();
+        setInterval(updateTime, 1000);
+    </script>
+</body>
+</html>

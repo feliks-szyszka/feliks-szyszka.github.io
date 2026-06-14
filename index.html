@@ -3,43 +3,209 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>under construction</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <title>feliks szyszka — work</title>
+    
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+
     <style>
+        :root {
+            --bg: #ffffff;
+            --text-primary: #121212;
+            --text-secondary: #888888;
+            --ease: cubic-bezier(0.23, 1, 0.32, 1);
+            --container-padding: 5vw;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #111111; /* dark background */
-            color: #f4f4f4; /* light foreground */
+            font-family: 'Inter', -apple-system, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-primary);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        @supports (font-variation-settings: normal) {
+          body { font-family: 'Inter var', sans-serif; }
+        }
+
+        /* NAVIGATION */
+        nav {
+            position: fixed;
+            top: 0; width: 100%;
+            z-index: 1000;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            text-align: center;
+            padding: 2rem var(--container-padding);
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
         }
 
-        .message-container {
-            padding: 20px;
+        .logo {
+            font-weight: 500; font-size: 1.1rem;
+            text-decoration: none; color: var(--text-primary);
+            letter-spacing: -0.02em; text-transform: lowercase;
         }
 
-        h1 {
-            font-size: 3em;
-            margin: 0;
-            color: #f4f4f4;
+        .nav-links { display: flex; gap: 2.5rem; }
+        .nav-links a {
+            text-decoration: none; color: var(--text-secondary);
+            font-size: 0.9rem; transition: color 0.3s var(--ease);
+            text-transform: lowercase; font-weight: 300;
+        }
+        .nav-links a:hover, .nav-links a.active { color: var(--text-primary); }
+
+        /* LAYOUT */
+        .container {
+            padding: 0 var(--container-padding);
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
-        p {
-            font-size: 1.2em;
-            margin-top: 10px;
+        header { padding: 25vh 0 12vh; max-width: 900px; }
+        h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); font-weight: 300; line-height: 1.1; letter-spacing: -0.04em; text-transform: lowercase; }
+
+        /* GRID */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 5rem 3.5rem;
+            margin-bottom: 15vh;
+        }
+
+        .project-item {
+            text-decoration: none; color: inherit;
+            opacity: 0; transform: translateY(30px);
+            transition: opacity 1.2s var(--ease), transform 1.2s var(--ease);
+        }
+
+        .project-item.reveal { opacity: 1; transform: translateY(0); }
+        .img-container { aspect-ratio: 4 / 3; overflow: hidden; background: #f7f7f7; margin-bottom: 1.5rem; }
+        .img-container img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s var(--ease); }
+        .project-item:hover img { transform: scale(1.03); }
+
+        .meta { display: flex; justify-content: space-between; align-items: baseline; text-transform: lowercase; }
+        .meta h2 { font-size: 1.2rem; font-weight: 300; letter-spacing: -0.02em; }
+        .meta span { color: var(--text-secondary); font-size: 0.9rem; font-weight: 300; font-variant-numeric: tabular-nums; }
+
+        /* FOOTER */
+        footer {
+            padding: 10vh 0 64px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .footer-links { display: flex; flex-direction: column; gap: 12px; }
+        .footer-links a { color: var(--text-primary); text-decoration: none; font-size: 15px; font-weight: 300; transition: color 0.3s var(--ease); text-transform: lowercase; }
+        .footer-links a:hover { color: var(--text-secondary); }
+        .footer-right { display: flex; flex-direction: column; gap: 12px; align-items: flex-end; }
+        .copyright { color: var(--text-secondary); font-size: 13px; font-weight: 300; text-transform: lowercase; }
+        .stats { color: #bbb; font-size: 11px; font-variant-numeric: tabular-nums; display: flex; gap: 16px; font-weight: 300; }
+
+        @media (max-width: 768px) {
+            .grid { grid-template-columns: 1fr; gap: 4rem; }
+            .nav-links { gap: 1.5rem; }
+            footer { flex-direction: column; gap: 32px; }
+            .footer-right { align-items: flex-start; }
         }
     </style>
 </head>
 <body>
-    <div class="message-container">
-        <h1>under construction</h1>
-        <p>the 2025 portfolio isn't ready yet :P</p>
-    </div>
+
+    <nav>
+        <a href="index.html" class="logo">feliks szyszka</a>
+        <div class="nav-links">
+            <a href="index.html" class="active">work</a>
+            <a href="about.html">about</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <header>
+            <h1>I build hardware products and digital interactions that bring them to life.</h1>
+        </header>
+
+        <section id="work" class="grid">
+            <a href="powerbank.html" class="project-item">
+                <div class="img-container">
+                    <img src="powerbank_hero.png" alt="powerbank project">
+                </div>
+                <div class="meta">
+                    <h2>powerbank</h2>
+                    <span>2024</span>
+                </div>
+            </a>
+
+            <a href="speaker.html" class="project-item">
+                <div class="img-container">
+                    <img src="speaker.png" alt="speaker (gen 1) project">
+                </div>
+                <div class="meta">
+                    <h2>speaker (gen 1)</h2>
+                    <span>2026</span>
+                </div>
+            </a>
+        </section>
+
+        <footer>
+            <div class="footer-links">
+                <a href="mailto:feliks.szyszka@tutamail.com">email</a>
+                <a href="https://youtube.com/@feliksszyszka">youtube</a>
+                <a href="https://github.com/feliks-szyszka">github</a>
+            </div>
+            <div class="footer-right">
+                <div class="copyright">
+                    <span>&copy; <span id="year"></span> feliks szyszka — London, UK</span>
+                </div>
+                <div class="stats">
+                    <span id="filesize"></span>
+                    <span id="localtime"></span>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Scroll Reveal Array Engine
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('reveal');
+            });
+        }, observerOptions);
+        document.querySelectorAll('.project-item').forEach(item => observer.observe(item));
+
+        // System Environment Logs
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', window.location.href, true);
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                var bytes = xhr.responseText.length;
+                var kb = (bytes / 1024).toFixed(3);
+                document.getElementById('filesize').textContent = kb + ' KB';
+            }
+        };
+        xhr.send();
+
+        function updateTime() {
+            var now = new Date();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var seconds = now.getSeconds();
+            if (hours < 10) hours = '0' + hours;
+            if (minutes < 10) minutes = '0' + minutes;
+            if (seconds < 10) seconds = '0' + seconds;
+            document.getElementById('localtime').textContent = hours + ':' + minutes + ':' + seconds;
+        }
+        updateTime();
+        setInterval(updateTime, 1000);
+    </script>
 </body>
 </html>
